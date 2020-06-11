@@ -15,5 +15,7 @@ namespace BIC.DataAccess.Data
         }
 
         public DbSet<Request> Requests { get; set; }
+
+        public DbSet<ApplicationUser> ApplicationUser { get; set; }
     }
 }

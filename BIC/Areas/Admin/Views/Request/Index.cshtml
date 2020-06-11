@@ -5,7 +5,6 @@
     var status = Context.Request.Query["status"];
 
     var submitted = "text-primary";
-    var approved = "text-primary";
     var pending = "text-primary";
     var completed = "text-primary";
     var invoiceSubmitted = "text-primary";
@@ -18,38 +17,31 @@
     }
     else
     {
-        if (status == "Approved")
+        if (status == "Pending")
         {
-            approved = "active text-white";
+            pending = "active text-white";
         }
         else
         {
-            if (status == "Pending")
+            if (status == "Work Completed")
             {
-                pending = "active text-white";
+                completed = "active text-white";
             }
             else
             {
-                if (status == "Work Completed")
+                if (status == "Invoice Submitted")
                 {
-                    completed = "active text-white";
+                    invoiceSubmitted = "active text-white";
                 }
                 else
                 {
-                    if (status == "Invoice Submitted")
+                    if (status == "Payment Recieved")
                     {
-                        invoiceSubmitted = "active text-white";
+                        paymentRecieved = "active text-white";
                     }
                     else
                     {
-                        if (status == "Payment Recieved")
-                        {
-                            paymentRecieved = "active text-white";
-                        }
-                        else
-                        {
-                            all = "active text-white";
-                        }
+                        all = "active text-white";
                     }
                 }
             }
@@ -80,9 +72,6 @@
             <ul class="list-group list-group-horizontal-sm">
                 <a style="text-decoration:none" asp-controller="Request" asp-route-status="submitted" asp-action="Index">
                     <li class="list-group-item @submitted">Submitted</li>
-                </a>
-                <a style="text-decoration:none" asp-controller="Request" asp-route-status="approved" asp-action="Index">
-                    <li class="list-group-item @approved">Approved</li>
                 </a>
                 <a style="text-decoration:none" asp-controller="Request" asp-route-status="pending" asp-action="Index">
                     <li class="list-group-item @pending">Pending</li>

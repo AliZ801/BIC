@@ -94,11 +94,6 @@ namespace BIC.Areas.Admin.Controllers
             return Json(new { data = _unitofWork.Request.GetAll(filter: r => r.Status == SD.Submitted) });
         }
 
-        public IActionResult GetAllApprovedRequest()
-        {
-            return Json(new { data = _unitofWork.Request.GetAll(filter: r => r.Status == SD.Approved) });
-        }
-
         public IActionResult GetAllPendingRequest()
         {
             return Json(new { data = _unitofWork.Request.GetAll(filter: r => r.Status == SD.Pending) });

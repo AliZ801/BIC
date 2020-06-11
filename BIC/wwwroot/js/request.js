@@ -6,28 +6,23 @@
             loadDataTable("GetAllSubmittedRequest");
         }
         else {
-            if (url.includes("approved")) {
-                loadDataTable("GetAllApprovedRequest");
+            if (url.includes("pending")) {
+                loadDataTable("GetAllPendingRequest");
             }
             else {
-                if (url.includes("pending")) {
-                    loadDataTable("GetAllPendingRequest");
+                if (url.includes("workCompleted")) {
+                    loadDataTable("GetAllCompletedRequest");
                 }
                 else {
-                    if (url.includes("workCompleted")) {
-                        loadDataTable("GetAllCompletedRequest");
+                    if (url.includes("invoiceSubmitted")) {
+                        loadDataTable("GetAllInvoiceSubmittedRequest");
                     }
                     else {
-                        if (url.includes("invoiceSubmitted")) {
-                            loadDataTable("GetAllInvoiceSubmittedRequest");
+                        if (url.includes("paymentRecieved")) {
+                            loadDataTable("GetAllPaymentRequest");
                         }
                         else {
-                            if (url.includes("paymentRecieved")) {
-                                loadDataTable("GetAllPaymentRequest");
-                            }
-                            else {
-                                loadDataTable("GetAllRequest");
-                            }
+                            loadDataTable("GetAllRequest");
                         }
                     }
                 }
